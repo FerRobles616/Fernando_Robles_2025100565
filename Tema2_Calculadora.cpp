@@ -16,7 +16,7 @@ int main () {
     float rsuma, rresta, rmultip, rdivision; //se inicializan las variables de resultados
     cout << "Ingrese dos numeros que sean mayor a 0 y menor que 100: " << endl;//se solicitan al usuario dos numeros
     cin >> n1; //se lee y guarda el primer numero en n1
-	cin >> n2; //se lee y guarda el primer numero en n2
+	cin >> n2; //se lee y guarda el segundo numero en n2
     
 	//se valida que los numeros ingresados sean mayor a 0 y menor que 100
 	if (n1 > 0 && n1 < 100 && n2 > 0 && n2 < 100) {
