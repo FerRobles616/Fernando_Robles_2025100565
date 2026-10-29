@@ -4,14 +4,14 @@
 
 using namespace std;
 
-// 1. Definición de la Estructura Personaje
+// Definición de la Estructura Personaje
 struct Personaje {
     string nombre;
     int vida;
     int ataque;
 };
 
-// 2. Función para registrar un nuevo personaje en el archivo
+// Función para registrar un nuevo personaje en el archivo
 void registrarPersonaje() {
     Personaje p;
     
@@ -20,16 +20,16 @@ void registrarPersonaje() {
     cin >> ws; // Limpia espacios en blanco pendientes en el buffer
     getline(cin, p.nombre);
     
-    cout << "Ingrese los puntos de vida (int): ";
+    cout << "Ingrese los puntos de vida: ";
     cin >> p.vida;
     
-    cout << "Ingrese los puntos de ataque (int): ";
+    cout << "Ingrese los puntos de ataque: ";
     cin >> p.ataque;
 
     // Abrir archivo en modo de adición para no borrar registros previos
     ofstream archivo("personajes.txt", ios::app);
 
-    // 5. Buenas prácticas: Verificar si el archivo se abrió correctamente
+    // Verificar si el archivo se abrió correctamente
     if (!archivo.is_open()) {
         cout << "Error: No se pudo abrir el archivo para escritura.\n";
         return;
@@ -40,17 +40,17 @@ void registrarPersonaje() {
             << p.vida << "\n" 
             << p.ataque << "\n";
 
-    // 5. Buenas prácticas: Cerrar el archivo al terminar
+    // Cerrar el archivo al terminar
     archivo.close();
     cout << "¡Personaje registrado y guardado exitosamente!\n";
 }
 
-// 3. Función para consultar y leer todos los personajes almacenados
+// Función para consultar y leer todos los personajes almacenados
 void mostrarPersonajes() {
     // Abrir archivo con ifstream para lectura
     ifstream archivo("personajes.txt");
 
-    // 5. Buenas prácticas: Verificar si el archivo se abrió correctamente
+    // Verificar si el archivo se abrió correctamente
     if (!archivo.is_open()) {
         cout << "\n[Aviso] Aún no hay registros guardados o no se pudo abrir el archivo.\n";
         return;
@@ -79,11 +79,11 @@ void mostrarPersonajes() {
         cout << "El archivo está vacío actualmente.\n";
     }
 
-    // 5. Buenas prácticas: Cerrar el archivo al terminar
+    // Cerrar el archivo al terminar
     archivo.close();
 }
 
-// 4. Menú Interactivo Principal
+// Menú Interactivo Principal
 int main() {
     int opcion;
 
